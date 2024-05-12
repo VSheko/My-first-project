@@ -34,6 +34,7 @@ background-size: cover;
 
   /*background: color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -113,6 +114,7 @@ Não é necessário setar imagem em css, pois alguns aspectos são fluídos.
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
 
@@ -138,6 +140,7 @@ ul li a {
   border: 1px solid var(--stroke-color);
   border-radius: 8px;
   -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   font-weight: 500;
   text-decoration: none;
   transition: background 0.2s ease;
@@ -174,4 +177,14 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/Background.png);
+  }
+
+  .light {
+    --bg-url: url(./assets/Background-light.png);
+  }
 }
