@@ -100,12 +100,17 @@ Não é necessário setar imagem em css, pois alguns aspectos são fluídos.
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  animation: slide-out .2s; 
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in .2s forwards; 
 }
+
+#switch button :hover{
+  outline: 8px solid var(--highlight-color);
+}
+
 
 #switch span {
   display: block;
@@ -186,5 +191,27 @@ footer {
 
   .light {
     --bg-url: url(./assets/Background-light.png);
+  }
+}
+
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 50%;
+  }
+
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: 0;
   }
 }
