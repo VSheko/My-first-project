@@ -45,7 +45,8 @@ body * {
   /*
 Não é necessário setar imagem em css, pois alguns aspectos são fluídos.
     */
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /*margin-right: auto;
     margin-left: auto;
     */
