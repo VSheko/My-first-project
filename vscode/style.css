@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg: url(./assets/sun.svg);
+}
+
+body {
+  /*
+    background-image: url(./assets/bg-mobile.jpg);
+background-repeat: no-repeat;
+background-position: top center;
+background-size: cover;
+*/
+
+  /*background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  /*
+Não é necessário setar imagem em css, pois alguns aspectos são fluídos.
+    */
+  width: 360px;
+  /*margin-right: auto;
+    margin-left: auto;
+    */
+  margin: 56px auto 0px;
+  padding: 0 24px;
+  /*padding-top: 56px;*/
+  /*margin-top: 56px; também poderia ser usado no lugar de padding-top*/
+}
+/*PROFILE*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+/*
+#profile {
+    text-align: center;
+    A propriedade pai pode ter prioridade sobre as propriedades filhos
+}
+*/
+#profile img {
+  width: 112px;
+  display: block;
+  margin: auto;
+}
+
+#profile p {
+  font-weight: 500;
+  /* O navegador já tem por padrão o font-size de 16px nem sempre será necessário definir*/
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*SWITCH*/
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*links*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  /*height: 52px; Este poderia ser utilizado no lugar do comando padding*/
+  padding: 16px 24px;
+  align-items: center;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(4px);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+/*pseudo-selector*/
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid var(--text-color);
+}
+
+/*Social links*/
+#social-links {
+  display: flex;
+  padding: 24px 0;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%; /*50% no border radius vira uma bolinha perfeita */
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
